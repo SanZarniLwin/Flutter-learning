@@ -41,7 +41,7 @@ class _OrderingPizzaState extends State<OrderingPizza> {
         body: Padding(
           padding: const EdgeInsets.all(8.0),
           child: ListView(
-            children: toppings.map((topping){
+            children: toppings.map((topping) {
               return CheckboxListTile(
                 title: Text(topping),
                 value: selected.contains(topping),
@@ -64,17 +64,18 @@ class _OrderingPizzaState extends State<OrderingPizza> {
               backgroundColor: Colors.yellow.shade700,
               onPressed: () {
                 final text = selected.isEmpty
-                  ? 'No toppings selected.'
-                  : 'Toppings: ${selected.join(', ')}';
-                ScaffoldMessenger.of(context).showSnackBar(SnackBar(content: Text(text)));
+                    ? 'No toppings selected.'
+                    : 'Toppings: ${selected.join(', ')}';
+                ScaffoldMessenger.of(context)
+                    .showSnackBar(SnackBar(content: Text(text)));
               },
               child: const Icon(Icons.check),
             );
           },
         ),
-
-
       ),
     );
   }
 }
+/// Add Price calculation
+/// refactor widget structure like explained
